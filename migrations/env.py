@@ -9,7 +9,7 @@ from alembic import context
 
 from app.core.config import settings
 from app.db.base import Base
-from app.models import user as _user_model  # noqa: F401 - register mappers
+from app.models import users as _user_model
 
 config = context.config
 
