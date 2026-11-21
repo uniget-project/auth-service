@@ -24,7 +24,6 @@ services:
       DEBUG: "false"
     depends_on:
       auth-db: {condition: service_healthy}
-      auth-redis: {condition: service_healthy}
     networks:
       default:
       uniget:
@@ -51,20 +50,6 @@ services:
       retries: 10
     restart: unless-stopped
 
-  auth-redis:
-    image: redis:7-alpine
-    command: [redis-server, --appendonly, "yes"]
-    volumes: [auth-redis-data:/data]
-    networks:
-      default:
-      uniget:
-        aliases: [uniget-auth-redis]
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 3s
-      retries: 10
-    restart: unless-stopped
 
 networks:
   uniget:
@@ -73,4 +58,3 @@ networks:
 
 volumes:
   auth-data:
-  auth-redis-data:
