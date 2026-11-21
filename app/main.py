@@ -7,7 +7,6 @@ from app.core.config import settings
 from app.core.cors import setup_cors
 from app.db.redis import close_redis
 from app.db.session import engine
-from app.models import users as _user_model
 from app.routers import auth as auth_router
 from app.routers import health as health_router
 
