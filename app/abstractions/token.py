@@ -1,0 +1,9 @@
+import uuid
+from typing import runtime_checkable, Protocol
+
+
+@runtime_checkable
+class ITokenProvider(Protocol):
+    def create_access_token(self, payload: dict) -> str: ...
+    def create_refresh_token(self, user_id: uuid.UUID) -> str: ...
+    def decode(self, token: str, expected_type: str | None = None) -> dict | None: ...
