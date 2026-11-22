@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     ACCESS_EXPIRE_MIN: int = 15
     REFRESH_EXPIRE_DAYS: int = 30
 
-    REDIS_URL: str = "redis://localhost:16378/0"
+    REDIS_URL: str = "redis://auth-redis:6379/0"
 
     PENDING_REG_TTL_SEC: int = 60 * 10
     REG_RESEND_COOLDOWN_SEC: int = 60
