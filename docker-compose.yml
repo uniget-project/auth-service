@@ -21,6 +21,7 @@ services:
       PENDING_REG_TTL_SEC: ${PENDING_REG_TTL_SEC:-600}
       REG_RESEND_COOLDOWN_SEC: ${REG_RESEND_COOLDOWN_SEC:-60}
       VERIFY_MAX_ATTEMPTS: ${VERIFY_MAX_ATTEMPTS:-5}
+      REDIS_URL: redis://auth-redis:6379/0
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000,http://localhost:5173,http://localhost:8080}
       DEBUG: "false"
     depends_on:
