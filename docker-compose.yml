@@ -4,6 +4,8 @@ services:
   auth:
     build: .
     ports: ["127.0.0.1:${AUTH_PORT:-8001}:8000"]
+    volumes:
+      - ./migrations:/service/migrations
     environment:
       DB_HOST: auth-db
       DB_PORT: "5432"
